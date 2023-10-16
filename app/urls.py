@@ -23,5 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/books_service/", include("books_service.urls", namespace="books_service")),
     path("api/users_service/", include("users_service.urls", namespace="users_service")),
+    path("api/borrowings_service/", include("borrowings_service.urls", namespace="borrowings_service")),
     path("__debug__/", include("debug_toolbar.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
