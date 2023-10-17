@@ -22,13 +22,13 @@ class Payment(models.Model):
         PAID = "PAID"
 
     class TypeChoices(models.TextChoices):
-        PAYMENT = "PAYMENT "
+        PAYMENT = "PAYMENT"
         FINE = "FINE"
     status = models.CharField(max_length=50, choices=StatusChoices.choices)
     type = models.CharField(max_length=50, choices=TypeChoices.choices)
     borrowing = models.ForeignKey(Borrowing, on_delete=models.CASCADE)
     session = models.URLField()
-    session_id = models.CharField(max_length=255)
+    session_id = models.TextField()
     money_pay = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
