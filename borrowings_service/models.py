@@ -5,7 +5,7 @@ from users_service.models import User
 
 
 class Borrowing(models.Model):
-    borrow_date = models.DateField()
+    borrow_date = models.DateField(auto_now_add=True)
     expected_return_date = models.DateField()
     actual_return_date = models.DateField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
